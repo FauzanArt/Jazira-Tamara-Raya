@@ -355,6 +355,41 @@ html[data-theme="light"] .navbar-main.scrolled{background:rgba(248,250,252,.96)}
 .svc-num{font-family:var(--font-h);font-size:.7rem;font-weight:700;letter-spacing:.15em;color:var(--c-primary);opacity:.5;margin-bottom:12px}
 .svc-card h5{font-family:var(--font-h);font-weight:700;font-size:1.05rem;margin-bottom:10px;line-height:1.3}
 .svc-card p{font-size:.85rem;color:var(--c-muted);margin:0;line-height:1.7}
+.svc-card-featured{
+  display:grid;grid-template-columns:auto minmax(0,1fr) minmax(280px,.9fr) auto;
+  align-items:center;gap:24px;padding:28px 32px;
+  background:
+    linear-gradient(135deg,rgba(14,165,233,.14),rgba(245,158,11,.08)),
+    var(--c-dark3);
+}
+.svc-card-featured .svc-icon{margin:0;width:72px;height:72px;font-size:1.8rem}
+.svc-featured-kicker{
+  font-family:var(--font-h);font-size:.72rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--c-primary);margin-bottom:8px;
+}
+.svc-featured-copy h5{font-size:1.35rem;margin-bottom:8px}
+.svc-featured-copy p{font-size:.92rem;max-width:680px}
+.svc-points{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:8px}
+.svc-card-featured .svc-points{margin:0}
+.svc-points li{display:flex;gap:8px;font-size:.82rem;color:var(--c-muted);line-height:1.5}
+.svc-points i{color:var(--c-primary);margin-top:2px;flex-shrink:0}
+.svc-featured-actions{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.svc-featured-actions .btn-topnav{padding:11px 22px;text-decoration:none;white-space:nowrap}
+.svc-featured-note{font-size:.75rem;color:var(--c-muted);text-align:right;max-width:180px;line-height:1.4}
+.iso-feature-card{
+  background:linear-gradient(135deg,rgba(14,165,233,.12),rgba(245,158,11,.08));
+  border:1px solid var(--c-border);border-radius:var(--radius);padding:28px;height:100%;
+}
+.iso-feature-card h5{font-family:var(--font-h);font-size:1.1rem;font-weight:700;margin-bottom:12px}
+.iso-feature-card p{font-size:.9rem;color:var(--c-muted);margin:0;line-height:1.7}
+.iso-standard-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.iso-standard{
+  display:flex;align-items:flex-start;gap:10px;padding:14px;
+  background:rgba(255,255,255,.04);border:1px solid var(--c-border);border-radius:10px;
+}
+.iso-standard i{color:var(--c-primary);margin-top:2px}
+.iso-standard strong{display:block;font-family:var(--font-h);font-size:.95rem;line-height:1.2}
+.iso-standard span{display:block;font-size:.78rem;color:var(--c-muted);line-height:1.4;margin-top:2px}
 
 /* CTA banner */
 .cta-banner{
@@ -521,6 +556,11 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
   .contact-wrap{padding:36px 24px}
   .trust-bar{padding:20px 24px}
   .trust-sep{display:none}
+  .iso-standard-list{grid-template-columns:1fr}
+  .svc-card-featured{grid-template-columns:1fr;gap:18px}
+  .svc-card-featured .svc-icon{margin-bottom:0}
+  .svc-featured-actions{align-items:flex-start}
+  .svc-featured-note{text-align:left;max-width:none}
 }
 
 </style></head><body>
@@ -573,6 +613,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
             <li><a class="dropdown-item" href="#services">SOC as a Service</a></li>
             <li><a class="dropdown-item" href="#services">Digital Forensics</a></li>
             <li><a class="dropdown-item" href="#services">Web3 & Blockchain</a></li>
+            <li><a class="dropdown-item" href="#iso">Sertifikasi ISO</a></li>
             <li><a class="dropdown-item" href="#services">IT Outsourcing</a></li>
           </ul>
         </li>
@@ -605,8 +646,8 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
           <span data-i18n="hero_badge">Teknologi · Integritas · Kepercayaan</span>
         </div>
         <h1 class="hero-headline" data-aos="fade-up" data-aos-delay="80">
-          Solusi Digital<br>
-          <span class="grad">Terpercaya</span><br>
+          Sertifikasi ISO<br>
+          <span class="grad">Siap Audit</span><br>
           Untuk Bisnis Anda
         </h1>
         <p class="hero-sub" data-aos="fade-up" data-aos-delay="160" data-i18n="hero_sub">
@@ -626,12 +667,12 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
             <div class="hero-stat-label" data-i18n="stat1">Klien Gov</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-num">8</div>
+            <div class="hero-stat-num">9</div>
             <div class="hero-stat-label" data-i18n="stat2">Layanan Inti</div>
           </div>
           <div class="hero-stat">
-            <div class="hero-stat-num">24/7</div>
-            <div class="hero-stat-label" data-i18n="stat3">SOC Monitor</div>
+            <div class="hero-stat-num">ISO</div>
+            <div class="hero-stat-label" data-i18n="stat3">Compliance Ready</div>
           </div>
           <div class="hero-stat">
             <div class="hero-stat-num">100%</div>
@@ -641,13 +682,13 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
       </div>
       <div class="col-lg-6 hero-visual" data-aos="fade-left" data-aos-delay="200">
         <div class="hero-img-wrap">
-          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&q=80&auto=format&fit=crop"
-               alt="IT Security Operations Center" style="border-radius:20px">
+          <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&q=80&auto=format&fit=crop"
+               alt="ISO certification consultation" style="border-radius:20px">
           <div class="hero-img-badge">
-            <div class="badge-icon">🛡️</div>
+            <div class="badge-icon"><i class="bi bi-patch-check-fill"></i></div>
             <div>
-              <div class="badge-text">SOC Active</div>
-              <div class="badge-sub">24/7 Monitoring</div>
+              <div class="badge-text">ISO Ready</div>
+              <div class="badge-sub">Documented Process</div>
             </div>
           </div>
         </div>
@@ -677,7 +718,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
       <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
         <div class="sec-tag" data-i18n="values_tag">Tentang Kami</div>
         <h2 class="sec-title">
-          Solusi IT Terbaik Dengan <span class="hl">Integritas &amp; Kepercayaan</span>
+          Pendampingan Bisnis, IT, dan <span class="hl">Sertifikasi ISO</span>
         </h2>
         <p style="color:var(--c-muted);line-height:1.8;margin-bottom:20px" data-i18n="val1_body">
           Sebagai perusahaan yang menjunjung tinggi integritas dan komitmen dalam menjalankan kegiatan usaha, kami bertekad memberikan layanan terbaik kepada setiap mitra dan klien.
@@ -688,7 +729,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
         <ul class="about-checklist">
           <li><i class="bi bi-check-circle-fill"></i><span data-i18n="val3_title">Profesionalisme Tinggi</span></li>
           <li><i class="bi bi-check-circle-fill"></i><span>Berpengalaman &amp; Terpercaya</span></li>
-          <li><i class="bi bi-check-circle-fill"></i><span data-i18n="stat3">Monitoring 24/7</span></li>
+          <li><i class="bi bi-check-circle-fill"></i><span data-i18n="stat3">Compliance Ready</span></li>
           <li><i class="bi bi-check-circle-fill"></i><span data-i18n="val4_title">Komitmen Layanan</span></li>
         </ul>
         <div class="about-phone">
@@ -725,25 +766,25 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
           <div class="col-sm-6" data-aos="fade-up" data-aos-delay="100">
             <div class="feat-item">
               <div class="feat-icon"><i class="bi bi-shield-fill-check"></i></div>
-              <div><h5>Terbaik di Industri</h5><p>Solusi keamanan kelas enterprise yang telah dipercaya pemerintah dan BUMN.</p></div>
+          <div><h5>Siap Tender &amp; Audit</h5><p>Pendampingan dokumen, proses, dan bukti penerapan agar organisasi lebih siap menghadapi audit sertifikasi.</p></div>
             </div>
           </div>
           <div class="col-sm-6" data-aos="fade-up" data-aos-delay="160">
             <div class="feat-item">
               <div class="feat-icon"><i class="bi bi-award-fill"></i></div>
-              <div><h5>Award Winning</h5><p>Pengakuan atas keunggulan layanan dan inovasi teknologi keamanan digital.</p></div>
+          <div><h5>Pilihan Sertifikasi Fleksibel</h5><p>Tersedia jalur ISO non-akreditasi dan ISO akreditasi internasional sesuai kebutuhan bisnis.</p></div>
             </div>
           </div>
           <div class="col-sm-6" data-aos="fade-up" data-aos-delay="220">
             <div class="feat-item">
               <div class="feat-icon"><i class="bi bi-people-fill"></i></div>
-              <div><h5>Tim Profesional</h5><p>Tenaga ahli bersertifikasi dengan pengalaman lebih dari 5 tahun di bidangnya.</p></div>
+          <div><h5>Tim Profesional</h5><p>Tenaga ahli membantu gap analysis, penyusunan SOP, implementasi, hingga simulasi audit.</p></div>
             </div>
           </div>
           <div class="col-sm-6" data-aos="fade-up" data-aos-delay="280">
             <div class="feat-item">
               <div class="feat-icon"><i class="bi bi-headset"></i></div>
-              <div><h5>Support 24/7</h5><p>Tim SOC kami siap memantau dan merespons insiden keamanan kapan pun.</p></div>
+          <div><h5>Proses Terarah</h5><p>Roadmap jelas dari asesmen awal sampai rekomendasi perbaikan agar sertifikasi lebih terkendali.</p></div>
             </div>
           </div>
         </div>
@@ -759,13 +800,32 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
   <div class="container">
     <div class="text-center mb-5" data-aos="fade-up">
       <div class="sec-tag mx-auto" style="justify-content:center" data-i18n="services_tag">Yang Kami Lakukan</div>
-      <h2 class="sec-title" data-i18n="services_title_1">Layanan <span class="hl" data-i18n="services_title_2">Inti Kami</span></h2>
-      <p class="sec-sub mx-auto text-center" data-i18n="services_sub">Solusi keamanan digital dan teknologi end-to-end untuk kebutuhan korporasi dan pemerintah.</p>
+      <h2 class="sec-title"><span data-i18n="services_title_1">Layanan</span> <span class="hl" data-i18n="services_title_2">Inti Kami</span></h2>
+      <p class="sec-sub mx-auto text-center" data-i18n="services_sub">Solusi compliance, keamanan digital, dan teknologi end-to-end untuk kebutuhan korporasi dan pemerintah.</p>
     </div>
     <div class="row gy-4">
+      <div class="col-12" data-aos="fade-up" data-aos-delay="0">
+        <div class="svc-card svc-card-featured">
+          <div class="svc-icon"><i class="bi bi-patch-check-fill"></i></div>
+          <div class="svc-featured-copy">
+            <div class="svc-featured-kicker" data-i18n="svc9_kicker">Layanan unggulan 01</div>
+            <h5 data-i18n="svc9_title">Pendampingan Sertifikasi ISO</h5>
+            <p data-i18n="svc9_body">ISO Akreditasi Internasional dan ISO Akreditasi KAN untuk mutu, lingkungan, K3, anti-penyuapan, keamanan informasi, dan tata kelola proses.</p>
+          </div>
+          <ul class="svc-points">
+            <li><i class="bi bi-check-circle-fill"></i><span>Gap analysis dan roadmap implementasi</span></li>
+            <li><i class="bi bi-check-circle-fill"></i><span>Penyusunan SOP, kebijakan, dan bukti audit</span></li>
+            <li><i class="bi bi-check-circle-fill"></i><span>Pendampingan sampai audit sertifikasi</span></li>
+          </ul>
+          <div class="svc-featured-actions">
+            <a href="#iso" class="btn-topnav btn-quote" data-i18n="svc9_detail">Detail ISO</a>
+            <div class="svc-featured-note" data-i18n="svc9_note">Tanpa harga di website. Konsultasi dulu sesuai kebutuhan sertifikasi.</div>
+          </div>
+        </div>
+      </div>
       <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
         <div class="svc-card">
-          <div class="svc-num">01</div>
+          <div class="svc-num">02</div>
           <div class="svc-icon"><i class="bi bi-shield-lock-fill"></i></div>
           <h5 data-i18n="svc1_title">Konsultasi Keamanan &amp; Penilaian Risiko</h5>
           <p data-i18n="svc1_body">Gap analysis, threat assessment, roadmap remediatif</p>
@@ -773,7 +833,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
       </div>
       <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="80">
         <div class="svc-card">
-          <div class="svc-num">02</div>
+          <div class="svc-num">03</div>
           <div class="svc-icon"><i class="bi bi-activity"></i></div>
           <h5 data-i18n="svc2_title">Managed Security Services (SOC)</h5>
           <p data-i18n="svc2_body">Monitoring 24/7, incident response, threat hunting</p>
@@ -781,7 +841,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
       </div>
       <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="160">
         <div class="svc-card">
-          <div class="svc-num">03</div>
+          <div class="svc-num">04</div>
           <div class="svc-icon"><i class="bi bi-search"></i></div>
           <h5 data-i18n="svc3_title">Digital Forensics &amp; Investigation</h5>
           <p data-i18n="svc3_body">Investigasi digital untuk litigasi, compliance, audit internal</p>
@@ -789,7 +849,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
       </div>
       <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="240">
         <div class="svc-card">
-          <div class="svc-num">04</div>
+          <div class="svc-num">05</div>
           <div class="svc-icon"><i class="bi bi-currency-bitcoin"></i></div>
           <h5 data-i18n="svc4_title">Web3 &amp; Blockchain Advisory</h5>
           <p data-i18n="svc4_body">Audit smart contract, arsitektur on-chain/off-chain</p>
@@ -797,7 +857,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
       </div>
       <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="0">
         <div class="svc-card">
-          <div class="svc-num">05</div>
+          <div class="svc-num">06</div>
           <div class="svc-icon"><i class="bi bi-people-fill"></i></div>
           <h5 data-i18n="svc5_title">IT Outsourcing &amp; Talent Supply</h5>
           <p data-i18n="svc5_body">Penyediaan tenaga ahli jangka menengah/panjang</p>
@@ -805,7 +865,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
       </div>
       <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="80">
         <div class="svc-card">
-          <div class="svc-num">06</div>
+          <div class="svc-num">07</div>
           <div class="svc-icon"><i class="bi bi-bug-fill"></i></div>
           <h5 data-i18n="svc6_title">Zero-Click Malware</h5>
           <p data-i18n="svc6_body">Solusi investigasi digital forensik dan pembuktian</p>
@@ -813,7 +873,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
       </div>
       <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="160">
         <div class="svc-card">
-          <div class="svc-num">07</div>
+          <div class="svc-num">08</div>
           <div class="svc-icon"><i class="bi bi-broadcast-pin"></i></div>
           <h5 data-i18n="svc7_title">Authorized Signal Management</h5>
           <p data-i18n="svc7_body">Kontrol sinyal sesuai regulasi dan izin resmi</p>
@@ -821,10 +881,68 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
       </div>
       <div class="col-lg-3 col-sm-6" data-aos="fade-up" data-aos-delay="240">
         <div class="svc-card">
-          <div class="svc-num">08</div>
+          <div class="svc-num">09</div>
           <div class="svc-icon"><i class="bi bi-crosshair"></i></div>
           <h5 data-i18n="svc8_title">Anti-Drone Detection &amp; Mitigation</h5>
           <p data-i18n="svc8_body">Deteksi dan perlindungan area dari ancaman drone</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ISO CERTIFICATION -->
+<section class="sec feat-bg" id="iso">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="sec-tag">Sertifikasi ISO</div>
+        <h2 class="sec-title">
+          Bangun Kepercayaan Pasar dengan <span class="hl">Sistem Manajemen Berstandar ISO</span>
+        </h2>
+        <p class="sec-sub">
+          ISO membantu organisasi menetapkan proses kerja yang konsisten, terdokumentasi, terukur, dan terus diperbaiki. Sertifikasi menjadi bukti bagi pelanggan, principal, regulator, dan panitia tender bahwa perusahaan memiliki tata kelola yang siap diaudit.
+        </p>
+        <div class="iso-standard-list">
+          <div class="iso-standard"><i class="bi bi-award-fill"></i><div><strong>ISO 9001</strong><span>Manajemen mutu dan kepuasan pelanggan</span></div></div>
+          <div class="iso-standard"><i class="bi bi-tree-fill"></i><div><strong>ISO 14001</strong><span>Manajemen lingkungan dan kepatuhan dampak</span></div></div>
+          <div class="iso-standard"><i class="bi bi-heart-pulse-fill"></i><div><strong>ISO 45001</strong><span>Keselamatan dan kesehatan kerja</span></div></div>
+          <div class="iso-standard"><i class="bi bi-shield-lock-fill"></i><div><strong>ISO 27001</strong><span>Keamanan informasi dan perlindungan data</span></div></div>
+          <div class="iso-standard"><i class="bi bi-bank2"></i><div><strong>ISO 37001</strong><span>Sistem manajemen anti-penyuapan</span></div></div>
+          <div class="iso-standard"><i class="bi bi-diagram-3-fill"></i><div><strong>ISO Terintegrasi</strong><span>Kombinasi standar untuk satu sistem manajemen</span></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="row gy-3">
+          <div class="col-sm-6">
+            <div class="iso-feature-card">
+              <h5>Cocok untuk Siapa?</h5>
+              <p>Kontraktor, manufaktur, distributor, penyedia jasa, klinik, sekolah, startup teknologi, vendor BUMN, dan perusahaan yang ingin ikut tender atau naik kelas ke pasar korporasi.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="iso-feature-card">
+              <h5>Kenapa Perlu ISO?</h5>
+              <p>Memperkuat kredibilitas, merapikan SOP, mengurangi risiko operasional, membuka peluang tender, dan menunjukkan komitmen pada mutu, keselamatan, lingkungan, atau keamanan data.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="iso-feature-card">
+              <h5>Opsi Sertifikasi</h5>
+              <p>Pilih ISO Akreditasi Internasional untuk kebutuhan tender dan buyer global, atau ISO Akreditasi KAN untuk kebutuhan pengakuan nasional dan kepatuhan di Indonesia.</p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="iso-feature-card">
+              <h5>Alur Pendampingan</h5>
+              <p>Assessment awal, gap analysis, penyusunan dokumen, implementasi, internal audit, management review, corrective action, lalu pendampingan audit sertifikasi.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mt-4">
+          <a href="#contact" class="btn-hero-primary">
+            <i class="bi bi-whatsapp"></i> Konsultasi ISO Sekarang
+          </a>
         </div>
       </div>
     </div>
@@ -836,8 +954,8 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
   <div class="container" data-aos="zoom-in">
     <div class="cta-banner">
       <div class="cta-banner-text">
-        <h3>Butuh Konsultasi? Hubungi Kami Sekarang</h3>
-        <p>Tim ahli kami siap membantu kebutuhan keamanan digital dan teknologi Anda.</p>
+        <h3>Ingin Perusahaan Anda Siap Sertifikasi ISO?</h3>
+        <p>Konsultasikan kebutuhan standar ISO, kesiapan dokumen, dan jalur sertifikasi yang paling sesuai.</p>
       </div>
       <div class="cta-banner-phone">
         <i class="bi bi-telephone-fill"></i>
@@ -846,7 +964,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
           <div class="num">+62 898 828 8519</div>
         </div>
       </div>
-      <a href="#contact" class="btn-cta-white">Konsultasi Gratis →</a>
+      <a href="#contact" class="btn-cta-white">Konsultasi ISO →</a>
     </div>
   </div>
 </section>
@@ -1051,6 +1169,7 @@ html[data-theme="light"] .maps-frame iframe{filter:grayscale(10%) brightness(1)}
           <li><a href="#services" data-i18n="svc1_title">Konsultasi Keamanan</a></li>
           <li><a href="#services" data-i18n="svc2_title">SOC as a Service</a></li>
           <li><a href="#services" data-i18n="svc3_title">Digital Forensics</a></li>
+          <li><a href="#iso" data-i18n="svc9_title">Sertifikasi ISO</a></li>
           <li><a href="#services" data-i18n="svc4_title">Web3 & Blockchain</a></li>
           <li><a href="#services" data-i18n="svc8_title">Anti-Drone Detection</a></li>
         </ul>
@@ -1106,16 +1225,16 @@ const t = {
     nav_home:'Home', nav_about:'Tentang', nav_services:'Layanan',
     nav_clients:'Klien', nav_contact:'Kontak',
     btn_quote:'Free Konsultasi',
-    hero_badge:'Teknologi · Integritas · Kepercayaan',
-    hero_sub:'Keamanan siber, forensik digital, dan solusi teknologi kelas enterprise untuk pemerintah &amp; korporasi.',
+    hero_badge:'ISO · Compliance · Integritas',
+    hero_sub:'Pendampingan sertifikasi ISO, keamanan siber, forensik digital, dan solusi teknologi kelas enterprise untuk pemerintah &amp; korporasi.',
     hero_cta1:'Jelajahi Layanan', hero_cta2:'Hubungi Kami',
-    stat1:'Klien Gov', stat2:'Layanan Inti', stat3:'SOC Monitor',
+    stat1:'Klien Gov', stat2:'Layanan Inti', stat3:'Compliance Ready',
     values_tag:'Tentang Kami',
-    val1_body:'Sebagai perusahaan yang menjunjung tinggi integritas dan komitmen dalam menjalankan kegiatan usaha, kami bertekad memberikan layanan terbaik kepada setiap mitra dan klien.',
-    val2_body:'Integritas merupakan landasan utama yang membentuk kepercayaan melalui prinsip kelayakan, kejujuran, dan tata kelola yang bertanggung jawab.',
+    val1_body:'Kami membantu organisasi membangun tata kelola, dokumen, SOP, dan sistem manajemen yang siap diaudit untuk kebutuhan sertifikasi ISO maupun pengembangan bisnis.',
+    val2_body:'Integritas menjadi landasan utama dalam setiap pendampingan, mulai dari asesmen awal, gap analysis, implementasi, hingga kesiapan audit sertifikasi.',
     val3_title:'Profesionalisme Tinggi', val4_title:'Komitmen Layanan',
     services_tag:'Yang Kami Lakukan', services_title_1:'Layanan', services_title_2:'Inti Kami',
-    services_sub:'Solusi keamanan digital dan teknologi end-to-end untuk kebutuhan korporasi dan pemerintah.',
+    services_sub:'Solusi compliance, keamanan digital, dan teknologi end-to-end untuk kebutuhan korporasi dan pemerintah.',
     svc1_title:'Konsultasi Keamanan &amp; Penilaian Risiko', svc1_body:'Gap analysis, threat assessment, roadmap remediatif',
     svc2_title:'Managed Security Services (SOC)', svc2_body:'Monitoring 24/7, incident response, threat hunting',
     svc3_title:'Digital Forensics &amp; Investigation', svc3_body:'Investigasi digital untuk litigasi, compliance, audit internal',
@@ -1124,6 +1243,8 @@ const t = {
     svc6_title:'Zero-Click Malware', svc6_body:'Solusi investigasi digital forensik dan pembuktian',
     svc7_title:'Authorized Signal Management', svc7_body:'Kontrol sinyal sesuai regulasi dan izin resmi',
     svc8_title:'Anti-Drone Detection &amp; Mitigation', svc8_body:'Deteksi dan perlindungan area dari ancaman drone',
+    svc9_title:'Pendampingan Sertifikasi ISO', svc9_body:'ISO Akreditasi Internasional dan ISO Akreditasi KAN untuk mutu, lingkungan, K3, anti-penyuapan, keamanan informasi, dan tata kelola proses.',
+    svc9_kicker:'Layanan unggulan 01', svc9_detail:'Detail ISO', svc9_note:'Tanpa harga di website. Konsultasi dulu sesuai kebutuhan sertifikasi.',
     other_tag:'Di Luar Teknologi', other_title_1:'Lini Layanan', other_title_2:'Lainnya',
     other_sub:'Diversifikasi bisnis mencakup komoditas, konstruksi, dan pengadaan pemerintah.',
     oth1_title:'Perdagangan Komoditas Strategis', oth1_body:'Produksi dan distribusi minyak goreng dan pupuk nasional',
@@ -1141,16 +1262,16 @@ const t = {
     nav_home:'Home', nav_about:'About', nav_services:'Services',
     nav_clients:'Clients', nav_contact:'Contact',
     btn_quote:'Free Consultation',
-    hero_badge:'Technology · Integrity · Trust',
-    hero_sub:'Cybersecurity, digital forensics, and enterprise-grade technology solutions for government &amp; corporates.',
+    hero_badge:'ISO · Compliance · Integrity',
+    hero_sub:'ISO certification assistance, cybersecurity, digital forensics, and enterprise-grade technology solutions for government &amp; corporates.',
     hero_cta1:'Explore Services', hero_cta2:'Contact Us',
-    stat1:'Gov Clients', stat2:'Core Services', stat3:'SOC Monitor',
+    stat1:'Gov Clients', stat2:'Core Services', stat3:'Compliance Ready',
     values_tag:'About Us',
-    val1_body:'As a company upholding integrity and commitment in all business activities, we are dedicated to delivering the best service to every partner and client.',
-    val2_body:'Integrity is the primary foundation building trust through principles of propriety, honesty, and responsible governance.',
+    val1_body:'We help organizations build governance, documentation, SOPs, and management systems that are audit-ready for ISO certification and business growth.',
+    val2_body:'Integrity guides every engagement, from initial assessment, gap analysis, implementation, to certification audit readiness.',
     val3_title:'High Professionalism', val4_title:'Service Commitment',
     services_tag:'What We Do', services_title_1:'Our Core', services_title_2:'Services',
-    services_sub:'End-to-end digital security and technology solutions for corporate and government needs.',
+    services_sub:'End-to-end compliance, digital security, and technology solutions for corporate and government needs.',
     svc1_title:'Security Consulting &amp; Risk Assessment', svc1_body:'Gap analysis, threat assessment, remediation roadmap',
     svc2_title:'Managed Security Services (SOC)', svc2_body:'24/7 monitoring, incident response, threat hunting',
     svc3_title:'Digital Forensics &amp; Investigation', svc3_body:'Digital investigation for litigation, compliance, internal audit',
@@ -1159,6 +1280,8 @@ const t = {
     svc6_title:'Zero-Click Malware', svc6_body:'Digital investigation for forensic analysis',
     svc7_title:'Authorized Signal Management', svc7_body:'Signal control solutions per regulations',
     svc8_title:'Anti-Drone Detection &amp; Mitigation', svc8_body:'Area protection against illegal drone threats',
+    svc9_title:'ISO Certification Assistance', svc9_body:'Internationally accredited ISO and KAN-accredited ISO options for quality, environment, OHS, anti-bribery, information security, and process governance.',
+    svc9_kicker:'Featured service 01', svc9_detail:'ISO Details', svc9_note:'No public pricing. Consult first based on certification needs.',
     other_tag:'Beyond Technology', other_title_1:'Other Service', other_title_2:'Lines',
     other_sub:'Our diversification covers commodities, construction, and government procurement.',
     oth1_title:'Strategic Commodity Trading', oth1_body:'Production and distribution of cooking oil and fertilizers',
@@ -1187,7 +1310,7 @@ function toggleLang(){
 applyLang('id');
 
 // Active nav link
-const sections=['top','about','services','clients','contact'];
+const sections=['top','about','services','iso','clients','contact'];
 const navLinks=document.querySelectorAll('.navbar-main .nav-link');
 window.addEventListener('scroll',()=>{
   let cur='top';
